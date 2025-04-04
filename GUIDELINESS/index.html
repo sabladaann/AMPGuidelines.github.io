@@ -1,14 +1,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Attendance Monitoring</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             font-family: 'Courier', monospace;
-            font-weight: 700; /* Bold */
+            font-weight: 700;
             background-image: url('ATTENDANCE RECORD.png');
             background-size: cover;
             background-position: center;
@@ -18,101 +18,130 @@
             margin: 0;
             position: relative;
             color: white;
-        }
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 0;
+            overflow-x: hidden;
         }
         .content {
             position: relative;
             z-index: 1;
+            width: 100%;
+            padding: 0.5rem 1rem; /* Reduced top padding */
+            box-sizing: border-box;
+            margin-top: 40px; /* Significantly reduced from 60px */
         }
-        /* Logo positioning */
+        /* Logo positioning - moved much higher */
         .logo-container {
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 2px; /* Very close to top */
+            left: 15px;
             z-index: 2;
         }
-        /* Box styling - applied to all boxes */
+        .logo-container img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+        /* Title box - positioned very close to top */
+        .title-box {
+            margin-top: 0; /* Removed top margin */
+            margin-bottom: 0.5rem; /* Minimal bottom margin */
+            padding: 0.8rem 1rem; /* Adjusted padding */
+        }
+        /* Box styling */
         .info-box, .contact-box, .title-box {
-            background-color: rgba(237, 232, 255, 0.7);
+            background-color: rgba(237, 232, 255, 0.85);
             backdrop-filter: blur(5px);
             border-radius: 0.5rem;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: black;
             font-family: 'Courier', monospace;
-            font-weight: 700; /* Bold */
+            font-weight: 700;
+            width: 100%;
+            box-sizing: border-box;
         }
-        /* Title now in Courier Bold */
+        /* Title adjustments */
         .pasoa-title {
             font-family: 'Courier', monospace;
-            font-size: 2.5rem;
-            font-weight: 700; /* Bold */
-            white-space: nowrap;
+            font-weight: 700;
             color: black;
             margin: 0;
+            word-break: break-word;
+            font-size: 2.2rem; /* Slightly reduced */
+            line-height: 1.1; /* Tighter line height */
         }
+        /* Responsive text sizes */
+        .info-box p, .info-box li {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+        /* Mobile-specific styles */
         @media (max-width: 768px) {
+            .content {
+                margin-top: 30px; /* Very small margin */
+                padding: 0.3rem 0.8rem;
+            }
+            .logo-container {
+                top: 1px; /* Almost touching top */
+            }
+            .logo-container img {
+                width: 80px;
+                height: 80px;
+            }
+            .title-box {
+                padding: 0.6rem;
+            }
             .pasoa-title {
-                font-size: 1.75rem;
-                white-space: normal;
+                font-size: 1.8rem;
             }
         }
-        /* Ensure all text uses Courier Bold */
-        h2, li, p {
-            font-family: 'Courier', monospace;
-            font-weight: 700; /* Bold */
+        @media (max-width: 480px) {
+            .content {
+                margin-top: 25px;
+            }
+            .logo-container img {
+                width: 70px;
+                height: 70px;
+            }
+            .pasoa-title {
+                font-size: 1.4rem;
+            }
         }
-        /* Ultra-compact contact box */
-        .micro-contact-box {
-            padding: 0.4rem 0.6rem;
-            width: fit-content;
-            margin: 0.5rem auto;
-            font-size: 0.8rem;
-            line-height: 1.2;
-            border-radius: 0.3rem;
-            font-weight: 700; /* Bold */
-        }
-        .micro-contact-box i {
-            font-size: 0.8rem;
-            margin-right: 0.2rem;
-        }
-        /* Make phone number extra bold */
-        .micro-contact-box strong {
-            font-weight: 800;
+        @media (max-width: 360px) {
+            .logo-container img {
+                width: 60px;
+                height: 60px;
+            }
+            .content {
+                margin-top: 20px;
+            }
+            .pasoa-title {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Logo in upper left corner -->
+    <!-- Logo positioned very high -->
     <div class="logo-container">
-        <img src="PASOA.png" alt="PASOA logo" class="w-24 h-24">
+        <img src="PASOA.png" alt="PASOA logo">
     </div>
 
-    <!-- Main content centered -->
-    <div class="content min-h-screen flex flex-col items-center justify-center p-4 w-full max-w-5xl mx-auto">
-        <!-- Title box now in Courier Bold -->
-        <div class="title-box w-full text-center mb-8">
+    <!-- Main content positioned very high -->
+    <div class="content min-h-screen flex flex-col items-center justify-center w-full max-w-5xl mx-auto">
+        <!-- Title box positioned very high -->
+        <div class="title-box w-full text-center">
             <h1 class="pasoa-title">PASOA ATTENDANCE MONITORING SYSTEM</h1>
         </div>
         
-        <div class="info-box text-xl text-left mb-8 w-full">
+        <div class="info-box text-base md:text-xl text-left mb-4 md:mb-8 w-full">
             <p>"PASOA ATTENDANCE MONITORING SYSTEM is an automated recording of attendance utilizing the NFC technology. The NFC attendance monitoring will help each student and school staff to track attendance easily and in a short period of time."</p>
         </div>
         
-        <div class="w-full grid md:grid-cols-2 gap-8">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             <div class="info-box">
-                <h2 class="text-3xl mb-4 text-center">HOW TO USE:</h2>
-                <ul class="list-disc pl-5 space-y-3">
+                <h2 class="text-xl md:text-3xl mb-2 md:mb-4 text-center">HOW TO USE:</h2>
+                <ul class="list-disc pl-5 space-y-2 md:space-y-3">
                     <li>Gently tap your NFC card against the scanner</li>
                     <li>Wait for the scanner to display a green light to confirm your NFC card was scanned</li>
                     <li>Position yourself in front of the camera and give your best smile</li>
@@ -122,8 +151,8 @@
             </div>
             
             <div class="info-box">
-                <h2 class="text-3xl mb-4 text-center">REMINDERS:</h2>
-                <ul class="list-disc pl-5 space-y-3">
+                <h2 class="text-xl md:text-3xl mb-2 md:mb-4 text-center">REMINDERS:</h2>
+                <ul class="list-disc pl-5 space-y-2 md:space-y-3">
                     <li>Take care of your card to avoid damage and being lost. Preferably place it in your ID holder for safekeeping.</li>
                     <li>Bring it every time you are attending school.</li>
                     <li>Before taking your photo, make sure your face is well-lit to ensure a clear photo</li>
@@ -134,11 +163,10 @@
             </div>
         </div>
         
-        <!-- Micro contact box -->
         <div class="contact-box micro-contact-box mt-1">
             <div class="flex items-center justify-center">
                 <i class="fas fa-phone-alt"></i>
-                <p>
+                <p class="ml-1">
                     Trouble scanning? Contact: <strong class="whitespace-nowrap">+123-456-7890</strong>
                 </p>
             </div>
