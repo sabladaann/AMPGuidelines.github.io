@@ -24,27 +24,27 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            padding: 0.5rem 1rem; /* Reduced top padding */
+            padding: 0.5rem 1rem;
             box-sizing: border-box;
-            margin-top: 40px; /* Significantly reduced from 60px */
+            margin-top: 45px; /* Adjusted for smaller logo */
         }
-        /* Logo positioning - moved much higher */
+        /* Logo positioning - slightly smaller */
         .logo-container {
             position: absolute;
-            top: 2px; /* Very close to top */
+            top: 10px;
             left: 15px;
             z-index: 2;
         }
         .logo-container img {
-            width: 100px;
-            height: 100px;
+            width: 80px; /* Reduced from 100px */
+            height: 80px; /* Reduced from 100px */
             object-fit: contain;
         }
-        /* Title box - positioned very close to top */
+        /* Title box */
         .title-box {
-            margin-top: 0; /* Removed top margin */
-            margin-bottom: 0.5rem; /* Minimal bottom margin */
-            padding: 0.8rem 1rem; /* Adjusted padding */
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            padding: 0.8rem 1rem;
         }
         /* Box styling */
         .info-box, .contact-box, .title-box {
@@ -67,26 +67,21 @@
             color: black;
             margin: 0;
             word-break: break-word;
-            font-size: 2.2rem; /* Slightly reduced */
-            line-height: 1.1; /* Tighter line height */
-        }
-        /* Responsive text sizes */
-        .info-box p, .info-box li {
-            font-size: 1rem;
-            line-height: 1.4;
+            font-size: 2.2rem;
+            line-height: 1.1;
         }
         /* Mobile-specific styles */
         @media (max-width: 768px) {
             .content {
-                margin-top: 30px; /* Very small margin */
+                margin-top: 50px; /* Adjusted for smaller logo */
                 padding: 0.3rem 0.8rem;
             }
             .logo-container {
-                top: 1px; /* Almost touching top */
+                top: 15px;
             }
             .logo-container img {
-                width: 80px;
-                height: 80px;
+                width: 70px; /* Reduced from 80px */
+                height: 70px; /* Reduced from 80px */
             }
             .title-box {
                 padding: 0.6rem;
@@ -97,23 +92,29 @@
         }
         @media (max-width: 480px) {
             .content {
-                margin-top: 25px;
+                margin-top: 45px;
+            }
+            .logo-container {
+                top: 12px;
             }
             .logo-container img {
-                width: 70px;
-                height: 70px;
+                width: 60px; /* Reduced from 70px */
+                height: 60px; /* Reduced from 70px */
             }
             .pasoa-title {
                 font-size: 1.4rem;
             }
         }
         @media (max-width: 360px) {
+            .logo-container {
+                top: 10px;
+            }
             .logo-container img {
-                width: 60px;
-                height: 60px;
+                width: 50px; /* Reduced from 60px */
+                height: 50px; /* Reduced from 60px */
             }
             .content {
-                margin-top: 20px;
+                margin-top: 40px;
             }
             .pasoa-title {
                 font-size: 1.2rem;
@@ -122,14 +123,14 @@
     </style>
 </head>
 <body>
-    <!-- Logo positioned very high -->
+    <!-- Logo positioned with smaller size -->
     <div class="logo-container">
         <img src="PASOA.png" alt="PASOA logo">
     </div>
 
-    <!-- Main content positioned very high -->
+    <!-- Main content -->
     <div class="content min-h-screen flex flex-col items-center justify-center w-full max-w-5xl mx-auto">
-        <!-- Title box positioned very high -->
+        <!-- Title box -->
         <div class="title-box w-full text-center">
             <h1 class="pasoa-title">PASOA ATTENDANCE MONITORING SYSTEM</h1>
         </div>
