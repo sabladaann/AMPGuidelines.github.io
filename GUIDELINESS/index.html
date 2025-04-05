@@ -60,6 +60,13 @@
             width: 100%;
             box-sizing: border-box;
         }
+        /* Compact contact box */
+        .micro-contact-box {
+            display: inline-block;
+            padding: 0.5rem 0.8rem;
+            margin: 0 auto;
+            width: auto;
+        }
         /* Title adjustments */
         .pasoa-title {
             font-family: 'Courier', monospace;
@@ -89,6 +96,9 @@
             .pasoa-title {
                 font-size: 1.8rem;
             }
+            .micro-contact-box {
+                padding: 0.4rem 0.7rem;
+            }
         }
         @media (max-width: 480px) {
             .content {
@@ -103,6 +113,10 @@
             }
             .pasoa-title {
                 font-size: 1.4rem;
+            }
+            .micro-contact-box {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.9rem;
             }
         }
         @media (max-width: 360px) {
@@ -119,6 +133,10 @@
             .pasoa-title {
                 font-size: 1.2rem;
             }
+            .micro-contact-box {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -132,21 +150,21 @@
     <div class="content min-h-screen flex flex-col items-center justify-center w-full max-w-5xl mx-auto">
         <!-- Title box -->
         <div class="title-box w-full text-center">
-            <h1 class="pasoa-title">PASOA ATTENDANCE MONITORING PROGRAM</h1>
+            <h1 class="pasoa-title">PASOA ATTENDANCE MONITORING SYSTEM</h1>
         </div>
         
         <div class="info-box text-base md:text-xl text-left mb-4 md:mb-8 w-full">
-            <p>"PASOA ATTENDANCE MONITORING PROGRAM is an automated recording of attendance utilizing the NFC technology. The NFC attendance monitoring will help each student and school staff to track attendance easily and in a short period of time."</p>
+            <p>"PASOA ATTENDANCE MONITORING SYSTEM is an automated recording of attendance utilizing the NFC technology. The NFC attendance monitoring will help each student and school staff to track attendance easily and in a short period of time."</p>
         </div>
         
         <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             <div class="info-box">
                 <h2 class="text-xl md:text-3xl mb-2 md:mb-4 text-center">HOW TO USE:</h2>
                 <ul class="list-disc pl-5 space-y-2 md:space-y-3">
-                    <li>Gently tap your NFC card on the scanner</li>
-                    <li>Wait for the scanner to display a red light to confirm your NFC card was scanned</li>
-                    <li>Position yourself in front of the camera and be presentable</li>
-                    <li>Ensure you see a check mark on the screen to confirm your photo was captured before entering class or events</li>
+                    <li>Gently tap your NFC card against the scanner</li>
+                    <li>Wait for the scanner to display a green light to confirm your NFC card was scanned</li>
+                    <li>Position yourself in front of the camera and give your best smile</li>
+                    <li>Ensure you see a check mark on the screen to confirm your photo was captured before entering class</li>
                     <li>Remember to repeat these steps to sign out after your class</li>
                 </ul>
             </div>
@@ -159,17 +177,15 @@
                     <li>Before taking your photo, make sure your face is well-lit to ensure a clear photo</li>
                     <li>Please ensure only one person signs in at a time to avoid errors or delays</li>
                     <li>Remove any hats, sunglasses, or accessories that may obstruct your face</li>
-                
+                    <li>Students can check their attendance history by accessing _________.website</li>
                 </ul>
             </div>
         </div>
         
         <div class="contact-box micro-contact-box mt-1">
             <div class="flex items-center justify-center">
-                <i class="fas fa-phone-alt"></i>
-                <p class="ml-1">
-                    Trouble scanning? Contact: <strong class="whitespace-nowrap">+123-456-7890</strong>
-                </p>
+                <i class="fas fa-phone-alt mr-1"></i>
+                <p>Trouble scanning? Contact: <strong>+123-456-7890</strong></p>
             </div>
         </div>
     </div>
