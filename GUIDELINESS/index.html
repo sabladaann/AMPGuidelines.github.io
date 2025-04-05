@@ -26,9 +26,8 @@
             width: 100%;
             padding: 0.5rem 1rem;
             box-sizing: border-box;
-            margin-top: 45px; /* Adjusted for smaller logo */
+            margin-top: 45px;
         }
-        /* Logo positioning - slightly smaller */
         .logo-container {
             position: absolute;
             top: 10px;
@@ -36,17 +35,15 @@
             z-index: 2;
         }
         .logo-container img {
-            width: 80px; /* Reduced from 100px */
-            height: 80px; /* Reduced from 100px */
+            width: 80px;
+            height: 80px;
             object-fit: contain;
         }
-        /* Title box */
         .title-box {
             margin-top: 0;
             margin-bottom: 0.5rem;
             padding: 0.8rem 1rem;
         }
-        /* Box styling */
         .info-box, .contact-box, .title-box {
             background-color: rgba(237, 232, 255, 0.85);
             backdrop-filter: blur(5px);
@@ -57,19 +54,25 @@
             color: black;
             font-family: 'Courier', monospace;
             font-weight: 700;
-            width: 100%;
             box-sizing: border-box;
         }
-        /* Split contact box */
-        .split-contact-box {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem 0.8rem;
-            margin: 0 auto;
-            width: 100%;
+        .two-line-contact-box {
+            display: inline-flex;
+            flex-direction: column;
+            padding: 0.5rem 1.2rem;
+            text-align: center;
+            width: auto;
+            max-width: 100%;
+            margin-left: auto; /* This pushes the box to the right */
+            margin-right: 0; /* Removes right margin */
         }
-        /* Title adjustments */
+        .contact-line {
+            margin: 0.1rem 0;
+            white-space: nowrap;
+        }
+        .contact-line:first-child {
+            margin-bottom: 0.3rem;
+        }
         .pasoa-title {
             font-family: 'Courier', monospace;
             font-weight: 700;
@@ -79,55 +82,46 @@
             font-size: 2.2rem;
             line-height: 1.1;
         }
-        /* Mobile-specific styles */
         @media (max-width: 768px) {
             .content {
-                margin-top: 50px; /* Adjusted for smaller logo */
+                margin-top: 50px;
                 padding: 0.3rem 0.8rem;
             }
-            .logo-container {
-                top: 15px;
-            }
             .logo-container img {
-                width: 70px; /* Reduced from 80px */
-                height: 70px; /* Reduced from 80px */
-            }
-            .title-box {
-                padding: 0.6rem;
+                width: 70px;
+                height: 70px;
             }
             .pasoa-title {
                 font-size: 1.8rem;
             }
-            .split-contact-box {
-                padding: 0.4rem 0.7rem;
+            .two-line-contact-box {
+                padding: 0.5rem 1rem;
             }
         }
         @media (max-width: 480px) {
             .content {
                 margin-top: 45px;
             }
-            .logo-container {
-                top: 12px;
-            }
             .logo-container img {
-                width: 60px; /* Reduced from 70px */
-                height: 60px; /* Reduced from 70px */
+                width: 60px;
+                height: 60px;
             }
             .pasoa-title {
                 font-size: 1.4rem;
             }
-            .split-contact-box {
-                padding: 0.3rem 0.6rem;
-                font-size: 0.9rem;
+            .two-line-contact-box {
+                padding: 0.4rem 0.8rem;
+                margin-left: auto; /* Maintain right alignment on mobile */
+                margin-right: auto; /* Center if needed on very small screens */
+            }
+            .contact-line {
+                white-space: normal;
             }
         }
         @media (max-width: 360px) {
-            .logo-container {
-                top: 10px;
-            }
             .logo-container img {
-                width: 50px; /* Reduced from 60px */
-                height: 50px; /* Reduced from 60px */
+                width: 50px;
+                height: 50px;
             }
             .content {
                 margin-top: 40px;
@@ -135,25 +129,20 @@
             .pasoa-title {
                 font-size: 1.2rem;
             }
-            .split-contact-box {
-                padding: 0.25rem 0.5rem;
-                font-size: 0.8rem;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.25rem;
+            .two-line-contact-box {
+                padding: 0.3rem 0.6rem;
+                width: 100%; /* Full width on very small screens */
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Logo positioned with smaller size -->
     <div class="logo-container">
         <img src="PASOA.png" alt="PASOA logo">
     </div>
 
-    <!-- Main content -->
     <div class="content min-h-screen flex flex-col items-center justify-center w-full max-w-5xl mx-auto">
-        <!-- Title box -->
         <div class="title-box w-full text-center">
             <h1 class="pasoa-title">PASOA ATTENDANCE MONITORING PROGRAM</h1>
         </div>
@@ -186,11 +175,11 @@
             </div>
         </div>
         
-        <div class="contact-box split-contact-box mt-1">
-            <span>Trouble scanning?</span>
-            <span class="flex items-center">
+        <div class="contact-box two-line-contact-box mt-1">
+            <div class="contact-line">Trouble scanning?</div>
+            <div class="contact-line flex items-center justify-center">
                 Contact: <i class="fas fa-phone-alt ml-1 mr-1"></i><strong>+123-456-7890</strong>
-            </span>
+            </div>
         </div>
     </div>
 </body>
