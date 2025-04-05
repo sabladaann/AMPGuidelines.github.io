@@ -60,12 +60,14 @@
             width: 100%;
             box-sizing: border-box;
         }
-        /* Compact contact box */
-        .micro-contact-box {
-            display: inline-block;
+        /* Split contact box */
+        .split-contact-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 0.5rem 0.8rem;
             margin: 0 auto;
-            width: auto;
+            width: 100%;
         }
         /* Title adjustments */
         .pasoa-title {
@@ -96,7 +98,7 @@
             .pasoa-title {
                 font-size: 1.8rem;
             }
-            .micro-contact-box {
+            .split-contact-box {
                 padding: 0.4rem 0.7rem;
             }
         }
@@ -114,7 +116,7 @@
             .pasoa-title {
                 font-size: 1.4rem;
             }
-            .micro-contact-box {
+            .split-contact-box {
                 padding: 0.3rem 0.6rem;
                 font-size: 0.9rem;
             }
@@ -133,9 +135,12 @@
             .pasoa-title {
                 font-size: 1.2rem;
             }
-            .micro-contact-box {
+            .split-contact-box {
                 padding: 0.25rem 0.5rem;
                 font-size: 0.8rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
             }
         }
     </style>
@@ -181,10 +186,11 @@
             </div>
         </div>
         
-        <div class="contact-box micro-contact-box mt-1">
-            <div class="flex items-center justify-center">
-                <p>Trouble scanning? Contact: <i class="fas fa-phone-alt ml-1 mr-1"></i><strong>+123-456-7890</strong></p>
-            </div>
+        <div class="contact-box split-contact-box mt-1">
+            <span>Trouble scanning?</span>
+            <span class="flex items-center">
+                Contact: <i class="fas fa-phone-alt ml-1 mr-1"></i><strong>+123-456-7890</strong>
+            </span>
         </div>
     </div>
 </body>
